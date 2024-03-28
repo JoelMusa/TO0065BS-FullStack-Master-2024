@@ -12,7 +12,7 @@ async function main() {
     try {
         // Connect to the MongoDB cluster
         await client.connect();
-
+        console.log("Connected to the mongoDB cluster")
         // Make the appropriate DB calls
         await listDatabases(client);
 
@@ -21,6 +21,7 @@ async function main() {
     } finally {
         // Close the connection to the MongoDB cluster
         await client.close();
+        console.log("Disconnected closed to the mongoDB cluster")
     }
 }
 

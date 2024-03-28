@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            text-align: center;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome, <span id="username">
+                <%=email %>
+            </span>!</h1>
+        <p>Thank you for being such a hard working SW developer.</p>
+    </div>
+
+    <script>
+        // add logout button
+        var button = document.createElement("button");
+        button.textContent = "Logout";
+        document.body.appendChild(button);
+        button.onclick = function () {
+            const juu = confirm('Haluatko varmasti kirjautua ulos?')
+            // Redirect to the login page
+            if (juu) {
+                window.location.href = "http://localhost:3000/logout";
+            }
+        };  
+    </script>
+</body>
+
+</html>

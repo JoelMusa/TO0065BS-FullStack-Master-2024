@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body class="container">
+
+
+
+    <header>
+        <!-- these tags are used to output the result to the template. For example partials -->
+        <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h1>Tämäpä on hauskaa</h1>
+            <p>Tervetuloa kokeilemaan EJS sivukaaviota</p>
+
+            <h2>Muuttujat sivulla</h2>
+            <p>
+                <!--  These tags are used to output the result of a JavaScript expression to the template. -->
+                <%= tagline %>
+            </p>
+
+            <ul>
+                <!-- These tags allow JavaScript code to run without outputting anything to the
+                template. For example, you can use these tags to define variables or call functions. -->
+                <% koodarit.forEach(function(koodari) { %>
+                    <li>
+                        <strong>
+                            <!--These tags are used to output the result of a JavaScript expression to the template. For example, you can use these tags to insert data into the template. -->
+                            <%= koodari.name %>
+                        </strong>
+                        representing <%= koodari.organization %>,
+                            born <%= koodari.birth_year %>
+                    </li>
+                    <% }); %>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+
+</html>
